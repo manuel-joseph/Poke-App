@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Poke App</string>
+    <string name="pokemon_title">Pokemon</string>
+    <string name="pokemon_id">pokemonId</string>
+    <string name="stats">Stats</string>
+    <string name="evolution">Evolution</string>
+    <string name="error_message">Something went wrong. Please try again</string>
+    <string name="server_not_reachable">Unable to connect to server</string>
+    <string name="internet_not_available">Unable to connect to server. Please check your internet connection</string>
+    <string name="internet_error_title">No Internet</string>
+    <string name="abilities">Abilities</string>
+    <string name="breeding">Breeding</string>
+    <string name="egg_group">Egg Group</string>
+    <string name="hatch_time">Hatch Time</string>
+    <string name="gender">Gender</string>
+    <string name="capture">Capture</string>
+    <string name="habitat">Habitat</string>
+    <string name="generation">Generation</string>
+    <string name="capture_rate">Capture Rate</string>
+    <string name="sprites">Sprites</string>
+    <string name="normal">Normal</string>
+    <string name="shiny">Shiny</string>
+</resources>

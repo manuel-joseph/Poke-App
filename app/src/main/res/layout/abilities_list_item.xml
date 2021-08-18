@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/margin_16_dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/abilityTitle"
+        android:textSize="@dimen/font_size_18"
+        android:textColor="@color/blue"
+        android:text="Torrent"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/abilityDescription"
+        android:textSize="@dimen/font_size_14"
+        android:textColor="@color/black"
+        android:text="Test ability description"
+        android:layout_marginTop="@dimen/margin_8_dp"/>
+</LinearLayout>

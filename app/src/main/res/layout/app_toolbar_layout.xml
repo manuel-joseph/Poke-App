@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.appbar.AppBarLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100sp"
+    android:gravity="bottom"
+    android:elevation="0dp"
+    android:background="@drawable/splash_gradient_background">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:id="@+id/toolbarTitle"
+        android:text="@string/pokemon_title"
+        android:gravity="center"
+        android:textSize="@dimen/font_size_18"
+        android:textColor="@color/black"
+        android:textStyle="bold"/>
+</com.google.android.material.appbar.AppBarLayout>
