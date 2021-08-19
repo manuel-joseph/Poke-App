@@ -2,11 +2,12 @@ package com.icehouse.pokeapp.ui.pokemonDetails
 
 import android.os.Bundle
 import androidx.viewpager.widget.ViewPager
+import com.bumptech.glide.Glide
 import com.icehouse.pokeapp.R
 import com.icehouse.pokeapp.databinding.ActivityPokemonDetailsBinding
 import com.icehouse.pokeapp.ui.base.BaseActivity
 
-class PokemonDetailsActivity : BaseActivity(), ViewPager.OnPageChangeListener {
+class PokemonDetailsActivity : BaseActivity(), ViewPager.OnPageChangeListener, IPokemonDetails {
     lateinit var binding: ActivityPokemonDetailsBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -64,5 +65,23 @@ class PokemonDetailsActivity : BaseActivity(), ViewPager.OnPageChangeListener {
 
     override fun onPageScrollStateChanged(state: Int) {
 
+    }
+
+    override fun loadPokemonImage(image: String) {
+        Glide.with(this)
+            .load(image)
+            .into(binding.pokemonImage)
+    }
+
+    override fun loadPokemonType(type: String) {
+        binding.typeChip.text = type
+    }
+
+    override fun loadPokemonDescription(description: String) {
+        binding.pokemonDescription.text = description
+    }
+
+    override fun loadPokemonName(name: String) {
+        binding.pokemonName.text = name.capitalize()
     }
 }

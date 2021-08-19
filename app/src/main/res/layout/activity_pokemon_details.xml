@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fillViewport="true">
@@ -14,8 +15,9 @@
         <com.google.android.material.appbar.AppBarLayout
             android:id="@+id/app_bar"
             android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:fitsSystemWindows="true">
+            android:layout_height="450dp"
+            android:fitsSystemWindows="true"
+            app:elevation="0dp">
 
             <com.google.android.material.appbar.CollapsingToolbarLayout
                 android:id="@+id/toolbar_layout"
@@ -23,14 +25,68 @@
                 android:layout_height="match_parent"
                 android:background="@color/blue"
                 android:fitsSystemWindows="true"
-                app:layout_scrollFlags="scroll|exitUntilCollapsed"
-                app:toolbarId="@+id/toolbar">
+                app:layout_scrollFlags="scroll|snap"
+                app:toolbarId="@+id/toolbar"
+                android:elevation="0dp">
 
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageView
+                        android:layout_width="152dp"
+                        android:layout_height="152dp"
+                        android:id="@+id/pokemonImage"
+                        android:layout_gravity="center_horizontal"
+                        android:elevation="@dimen/font_size_16"
+                        android:layout_marginTop="72dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="256dp"
+                        android:layout_gravity="bottom"
+                        android:background="@drawable/top_curved_background">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/pokemonName"
+                            android:textColor="@color/black"
+                            android:textSize="32sp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_marginTop="40dp"/>
+
+                        <com.google.android.material.chip.Chip
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/typeChip"
+                            app:chipBackgroundColor="@color/blue"
+                            android:textColor="@color/white"
+                            android:layout_centerHorizontal="true"
+                            android:layout_below="@id/pokemonName"
+                            app:chipEndPadding="32dp"
+                            app:chipStartPadding="32dp"
+                            android:layout_marginTop="@dimen/margin_8_dp"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/pokemonDescription"
+                            android:textColor="@color/black"
+                            android:textAlignment="center"
+                            android:maxLines="3"
+                            android:ellipsize="end"
+                            android:textSize="@dimen/font_size_14"
+                            android:padding="@dimen/margin_8_dp"
+                            android:layout_below="@id/typeChip"/>
+
+                    </RelativeLayout>
+                </FrameLayout>
                 <androidx.appcompat.widget.Toolbar
                     android:id="@+id/toolbar"
                     android:layout_width="match_parent"
                     android:layout_height="90dp"
-                    app:layout_collapseMode="pin" />
+                    app:layout_collapseMode="parallax"/>
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 

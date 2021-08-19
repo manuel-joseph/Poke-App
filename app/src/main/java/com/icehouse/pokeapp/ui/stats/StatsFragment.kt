@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.bumptech.glide.Glide
 import com.icehouse.pokeapp.R
 import com.icehouse.pokeapp.databinding.FragmentStatsBinding
+import com.icehouse.pokeapp.ui.pokemonDetails.IPokemonDetails
 import com.icehouse.pokeapp.utils.ViewModelFactory
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.kodein
@@ -30,6 +31,13 @@ class StatsFragment : Fragment(), KodeinAware {
         binding = FragmentStatsBinding.inflate(inflater,container,false)
         statsViewModel = ViewModelProvider(requireActivity(),factory).get(StatsViewModel::class.java)
         return binding.root
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        if((requireActivity() is IPokemonDetails)) {
+            statsViewModel.callbackListener = requireActivity() as IPokemonDetails
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -75,7 +83,7 @@ class StatsFragment : Fragment(), KodeinAware {
                 .load(it)
                 .into(binding.shinyImage)
         })
-        statsViewModel.getPokemonDetails()
-        statsViewModel.getSpeciesDetails()
+        statsViewModel.getPokemonDetailsFromLocal()
+        statsViewModel.getSpeciesFromLocal()
     }
 }
